@@ -79,6 +79,1439 @@
      "displayName" : "Decision Task",
      "icon" : "defaultdecisionicon.png",
      "category" : "Decision tasks"
-   ]
+   ],
 
+ [
+    "name" : "BotManager",
+    "parameters" : [
+        "serviceRequestBody" : new StringDataType(),		
+		"sendRequestBody" :  new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Bot Manager",
+	"category" :"BotManager",
+    "icon" : "Bot.jpg"
+	],
+	[
+    "name" : "SignalWithPID",
+    "parameters" : [
+        "parentPID" : new StringDataType(),		
+		"signalObj" :  new StringDataType(),
+		"signalName" : new StringDataType(),
+		"deploymentId" :  new StringDataType()		
+           ],
+    "results" : [
+        "status" : new ObjectDataType()
+	
+    ],
+    "displayName" : "Signal To MainProcess",
+	"category" :"ParallelExecution",
+    "icon" : "Bot.jpg"
+	],
+[
+    "name" : "SignalWithoutPID",
+    "parameters" : [
+       		"signalObj" :  new StringDataType(),
+		"signalName" : new StringDataType(),
+		"deploymentId" :  new StringDataType()
+	           ],
+    "results" : [
+        "status" : new ObjectDataType()
+	
+    ],
+    "displayName" : "Signal To SubProcess",
+	"category" :"ParallelExecution",
+    "icon" : "Bot.jpg"
+	],
+	[
+    "name" : "WFACKDtls",
+    "parameters" : [
+       		"DYNsopExecutionIdDYN" :  new StringDataType()
+		
+			           ],
+    "results" : [
+        "status" : new ObjectDataType()
+	
+    ],
+    "displayName" : "WF Init OPS",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+	],
+		
+  [
+    "name" : "InsertBotsResultsDtlls",
+    "parameters" : [
+        "DYNsopExecutionIdDYN" : new StringDataType(),		
+		"DYNparamValueDYN" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+	   "ResponseBody" : new ObjectDataType(),
+	     "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Update Bots Result",
+	"category" :"BotManager",
+    "icon" : "mysql.gif"
+  ],
+  
+  [
+    "name" : "updateSopStatus",
+    "parameters" : [
+        "DYNsopExecIdDYN" : new StringDataType(),		
+		"DYNsoptExecStatusDYN" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+	    "ResponseBody" : new ObjectDataType(),
+	     "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Update SOP Status",
+	"category" :"BotManager",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "UpdateSopStatus",
+    "parameters" : [
+        "DYNsopExecIdDYN" : new StringDataType(),		
+		"DYNsoptExecStatusDYN" : new StringDataType(),
+		"DYNsopExecExcpMsgDYN" : new StringDataType(),		
+		"DYNsopExecExcpStckTrceDYN" : new StringDataType()
+		
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+	    "ResponseBody" : new ObjectDataType(),
+	     "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "UpdateSOPStatus",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  
+  [
+    "name" : "UpdateSOPExecResults",
+    "parameters" : [
+        "DYNsopExecIdDYN" : new StringDataType(),		
+		"DYNparamValueDYN" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+	    "ResponseBody" : new ObjectDataType(),
+	     "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Update SOP ExecResults",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "InsertSOPResultDtlsList",
+    "parameters" : [
+        "DYNsopExecResultDtlsListDYN" : new StringDataType()
+		
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+	    "ResponseBody" : new ObjectDataType(),
+	     "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Insert SOPResult DtlsList",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  
+  [
+    "name" : "InsertSOPExecInterTransParamsListDtls",
+    "parameters" : [
+        "DYNsopExecInterTransParamDtlsListDYN" : new ObjectDataType()
+		
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+	    "ResponseBody" : new ObjectDataType(),
+	     "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Insert SOP ITP Details ",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "InsertSOPExecInterTransDtls",
+    "parameters" : [
+        "DYNsopExecIdDYN" : new StringDataType(),
+		"DYNtransactionCodeDYN" : new StringDataType(),
+		"DYNtransactionStatusDYN" : new StringDataType(),
+		"DYNtransCustomStatusDYN" : new StringDataType(),
+		"DYNtransactionStartDateDYN" : new StringDataType(),
+		"DYNtransactionEndDateDYN":new StringDataType()		
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+	    "ResponseBody" : new ObjectDataType(),
+	     "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Insert SOP InterTrans Dtls",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],  [
+    "name" : "mergeJsons",
+    "parameters" : [
+          "jsonStrings" : new StringDataType(),
+          "jsonPaths" : new StringDataType(),
+		  "sopExecId" : new StringDataType()
+               ],
+    "results" : [
+        "returnCode" : new ObjectDataType(),
+	"message": new ObjectDataType(),
+	"mergedJsonString": new ObjectDataType()
+    ],
+    "displayName" : "Merge Jsons",
+  "category" : "Json Operations",
+    "icon" : "json.png"
+  ],
+[
+    "name" : "findValInJson",
+    "parameters" : [
+           "jsonStrings" : new StringDataType(),
+          "jsonPaths" : new StringDataType(),
+		  "sopExecId" : new StringDataType()
+               ],
+    "results" : [
+        "returnCode" : new ObjectDataType(),
+	"message": new ObjectDataType()
+    ],
+    "displayName" : "Find In Json",
+  "category" : "Json Operations",
+    "icon" : "json.png"
+  ],
+  [
+    "name" : "FileDirListener",
+    "parameters" : [
+         "filePath" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+],
+    "results" : [
+         "isFilePathExist" : new ObjectDataType(),
+	     "isFileDir" : new ObjectDataType(),
+	     "fileList" : new ObjectDataType(),
+		 "status" : new ObjectDataType()
+
+    ],
+    "displayName" : "File Dir Listener",
+    "category" : "File Operations",
+    "icon" : "folder.gif"
+  ],  
+   [
+    "name" : "FindLatestFilePattern",
+    "parameters" : [
+         "fileDir" : new StringDataType(),
+		 "fileNamePattern" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+],
+    "results" : [
+         "FileName" : new ObjectDataType(),
+	     "TimeElapsed" : new ObjectDataType(),
+		 "status" : new ObjectDataType()
+    ],
+    "displayName" : "Find Latest File",
+    "category" : "File Operations",
+    "icon" : "folder.gif"
+  ],  
+  [
+    "name" : "FileOperations",
+    "parameters" : [
+         "srcDir" : new StringDataType(),
+		 "destDir" : new StringDataType(),
+		 "action" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+],
+    "results" : [
+         "actionPerformed" : new ObjectDataType(),
+		 "status" : new ObjectDataType()
+    ],
+    "displayName" : "File CDM Operations",
+    "category" : "File Operations",
+    "icon" : "folder.gif"
+  ],
+  [
+    "name" : "TransformXMLusingXSLT",
+    "parameters" : [
+         "xmlContent" : new StringDataType(),
+		 "xsltContent" : new StringDataType(),
+		 "xsltContentType" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+],
+    "results" : [
+         "outputXmlContent" : new ObjectDataType(),
+		 "status" : new ObjectDataType()
+
+    ],
+    "displayName" : "Transform XML using XSLT",
+    "category" : "XML Operations",
+    "icon" : "xml.gif"
+  ],  
+    [
+    "name" : "UpdateXMLXpathParams",
+    "parameters" : [
+         "filePath" : new StringDataType(),
+		 "xpath" : new StringDataType(),
+		 "keys" : new StringDataType(),
+		 "values" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+],
+    "results" : [
+         "tagNotFoundList" : new ObjectDataType(),
+		 "Updated" : new ObjectDataType(),
+		 "status" : new ObjectDataType()
+    ],
+    "displayName" : "Update XMLXpath Params",
+    "category" : "XML Operations",
+    "icon" : "xml.gif"
+  ],  
+    [
+    "name" : "UpdateXMLParams",
+    "parameters" : [
+         "filePath" : new StringDataType(),
+		 "values" : new StringDataType(),
+		 "keys" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+],
+    "results" : [
+         "result" : new ObjectDataType(),
+		 "status" : new ObjectDataType()
+
+    ],
+    "displayName" : "Update XML Params",
+    "category" : "XML Operations",
+    "icon" : "xml.gif"
+  ],  
+   [
+    "name" : "GetXMLParams",
+	"parameters" : [
+        "filePath" : new StringDataType(),
+        "keys" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "tagNotFoundList" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+
+    ],
+    "displayName" : "Fetch Xml Tag Values",
+	"category" :"XML Operations",
+    "icon" : "xml.gif"
+ ], 
+ [
+    "name" : "GetXmlXpathParams",
+ "parameters" : [
+        "filePath" : new StringDataType(),
+        "expression" : new StringDataType(),	
+        "keys" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "tagNotFoundList" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+
+    ],
+    "displayName" : "Fetch Xml Inner-Tag Values",
+	"category" :"XML Operations",
+    "icon" : "xml.gif"
+  ],  
+  [
+    "name" : "MySQLInsertQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+
+    ],
+    "displayName" : "MySQL Insert Operation",
+	"category" :"MySQL DB Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "MySQLSelectQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+    ],
+    "displayName" : "MySQL Select Operation",
+	"category" :"MySQL DB Operations",
+    "icon" : "mysql.gif"
+  ],
+    [
+    "name" : "MySQLUpdateQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+    ],
+    "displayName" : "MySQL Update Operation",
+	"category" :"MySQL DB Operations",
+    "icon" : "mysql.gif"
+  ],
+      [
+    "name" : "MySQLProcedureQuery",
+ "parameters" : [
+        "procedureQuery" 	: 	new StringDataType(),	       
+		"commandType"		:	new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+    ],
+    "displayName" : "Execute MySQL Procedure",
+	"category" :"MySQL DB Operations",
+    "icon" : "mysql.gif"
+  ],
+    [
+    "name" : "OracleInsertQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+
+    ],
+    "displayName" : "Oracle Insert Operation",
+	"category" :"Oracle DB Operations",
+    "icon" : "oracle.gif"
+  ],
+  [
+    "name" : "OracleSelectQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+
+    ],
+    "displayName" : "Oracle Select Operation",
+	"category" :"Oracle DB Operations",
+    "icon" : "oracle.gif"
+  ],
+    [
+    "name" : "OracleUpdateQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+
+    ],
+    "displayName" : "Oracle Update Operation",
+	"category" :"Oracle DB Operations",
+    "icon" : "oracle.gif"
+  ],
+        [
+    "name" : "OracleProcedureQuery",
+ "parameters" : [
+        "procedureQuery" 	: 	new StringDataType(),	       
+		"commandType"		:	new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+    ],
+    "displayName" : "Execute Oracle Procedure",
+	"category" :"Oracle DB Operations",
+    "icon" : "oracle.gif"
+  ],
+  [
+    "name" : "SqlServerInsertQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+
+    ],
+    "displayName" : "SqlServer Insert Operation",
+	"category" :"SqlServer DB Operations",
+    "icon" : "sqlserver.gif"
+  ],
+  [
+    "name" : "SqlServerSelectQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+
+    ],
+    "displayName" : "SqlServer Select Operation",
+	"category" :"SqlServer DB Operations",
+    "icon" : "sqlserver.gif"
+  ],
+    [
+    "name" : "SqlServerUpdateQuery",
+ "parameters" : [
+        "sqlQuery" : new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "QueryStatus" : new ObjectDataType(),
+		"QueryResult" : new ObjectDataType()
+
+    ],
+    "displayName" : "SqlServer Update Operation",
+	"category" :"SqlServer DB Operations",
+    "icon" : "sqlserver.gif"
+  ],  
+  [
+    "name" : "SqlServerProcedureQuery",
+	"parameters" : [
+        "procedureQuery" 	: 	new StringDataType(),	       
+		"commandType"		:	new StringDataType(),
+		"serverFileName" : new StringDataType(),
+		"dataSourceName" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+		 ],
+    "results" : [
+	  	  "QueryResult" : new ObjectDataType(),
+		  "QueryStatus" : new ObjectDataType()		  
+    ],
+    "displayName" : "Execute SQL Procedure",
+	"category"    :	"SqlServer DB Operations",
+    "icon"        : "sqlserver.gif"
+  ],
+  [
+    "name" : "WindowsLocalCommandExec",
+ "parameters" : [
+        "command" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "commandOutput" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+
+    ],
+    "displayName" : "Windows Local Command Exec",
+	"category" :"Windows Operations",
+    "icon" : "OS_Windows_8.gif"
+  ],
+[
+    "name" : "WindowsRemoteCommandExec",
+ "parameters" : [
+        "command"  : new StringDataType(),
+		"hostName" : new StringDataType(),
+		"userName" : new StringDataType(),
+		"password" : new StringDataType(),
+		"domainName" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "commandOutput" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+
+    ],
+    "displayName" : "Windows Remote Command Exec",
+	"category" :"Windows Operations",
+    "icon" : "OS_Windows_8.gif"
+  ],
+[
+    "name" : "WindowsRemotePowerShellScriptExec",
+ "parameters" : [
+        "scriptName" : new StringDataType(),
+        "scriptPath" : new StringDataType(),	
+        "remoteHost" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "returnCode" : new ObjectDataType(),
+		"status" : new ObjectDataType(),
+		"scriptOutput" : new ObjectDataType()
+
+    ],
+    "displayName" : "Windows Remote PowerShell Script Exec",
+	"category" :"Windows Operations",
+    "icon" : "OS_Windows_8.gif"
+  ],
+[
+    "name" : "SendMailViaSMTP",
+ "parameters" : [
+        "RecipientsTo" : new StringDataType(),
+        "RecipientsCc" : new StringDataType(),	
+        "RecipientsBcc" : new StringDataType(),
+        "from" : new StringDataType(),
+		"subject" : new StringDataType(),		
+        "msgBody" : new StringDataType(),
+        "fileAttachment" : new StringDataType(),
+		"SMTP_AUTH_USER" : new StringDataType(),
+		"SMTP_AUTH_PWD" : new StringDataType(),
+		"isPwdEncrypted" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "status" : new ObjectDataType()
+    ],
+    "displayName" : "Send Mail Via SMTP",
+	"category" :"Mail Operations",
+    "icon" : "defaultemailicon.gif"
+  ],
+[
+    "name" : "SendMailViaMSExchange",
+ "parameters" : [
+        "RecipientsTo" : new StringDataType(),	
+        "RecipientsCc" : new StringDataType(),
+        "RecipientsBcc" : new StringDataType(),
+        "subject" : new StringDataType(),
+        "from" : new StringDataType(),
+        "msgBody" : new StringDataType(),
+        "filePath" : new StringDataType(),
+		"MSEXCHANGE_AUTH_USER" : new StringDataType(),
+		"MSEXCHANGE_AUTH_PASS" : new StringDataType(),	
+		"isPwdEncrypted" : new StringDataType(),	
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "status" : new ObjectDataType()
+    ],
+    "displayName" : "Send Mail Via MSExchange",
+	"category" :"Mail Operations",
+    "icon" : "defaultemailicon.gif"
+  ],
+[
+    "name" : "LinuxLocalCommandExec",
+ "parameters" : [
+        "host" : new StringDataType(),	
+        "user" : new StringDataType(),
+        "password" : new StringDataType(),
+        "command" : new StringDataType(),
+        "isPwdEncoded" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+        "commandOutput" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+    ],
+    "displayName" : "Linux Local Command Exec",
+	"category" :"Linux Operations",
+    "icon" : "linux.gif"
+  ],  
+[
+    "name" : "LinuxRemoteCommandExec",
+ "parameters" : [
+        "host" : new StringDataType(),	
+        "user" : new StringDataType(),
+        "password" : new StringDataType(),
+        "remoteHost" : new StringDataType(),
+        "remoteUser" : new StringDataType(),
+        "remotePassword" : new StringDataType(),
+        "command" : new StringDataType(),	
+		"isPwdEncoded" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "commandOutput" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+    ],
+    "displayName" : "Linux Remote Command Exec",
+	"category" :"Linux Operations",
+    "icon" : "linux.gif"
+  ],
+  [
+    "name" : "ReadExcelFile",
+	"parameters" : [
+        "filePath" : new StringDataType(),	
+        "methodName" : new StringDataType(),
+        "colHeader" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "exceloutputList" : new ObjectDataType(),
+		"excelOpStatus" : new ObjectDataType()
+
+    ],
+    "displayName" : "Read Excel File",
+	"category" :"Excel Operations",
+    "icon" : "excel.png"
+  ],
+  [
+    "name" : "WriteExcelFile",
+ "parameters" : [
+        "filePath" : new StringDataType(),	
+        "sheetName" : new StringDataType(),
+        "excelDataList" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "excelOpStatus" : new ObjectDataType()
+    ],
+    "displayName" : "Write Excel File",
+	"category" :"Excel Operations",
+    "icon" : "excel.png"
+  ],
+  [
+    "name" : "CreateSNTicket",
+ "parameters" : [
+        "host" : new StringDataType(),	
+        "user" : new StringDataType(),
+        "password" : new StringDataType(),
+		 "requestBody" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+           ],
+    "results" : [
+		"responseBody" : new ObjectDataType(),
+        "status" : new ObjectDataType()
+    ],
+    "displayName" : "Create Ticket",
+	"category" :"ServiceNow Operations",
+    "icon" : "servicenow.png"
+  ],
+  [
+    "name" : "UpdateSNTicket",
+ "parameters" : [
+        "host" : new StringDataType(),	
+        "user" : new StringDataType(),
+        "password" : new StringDataType(),
+	"requestBody" : new StringDataType(),
+	"sys_id" : new StringDataType(),
+	"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+	  "responseBody" : new ObjectDataType(),
+	  "status" : new ObjectDataType()
+      
+    ],
+    "displayName" : "Update Ticket",
+	"category" :"ServiceNow Operations",
+    "icon" : "servicenow.png"
+  ],
+  [
+    "name" : "GetSNTicketDtls",
+ "parameters" : [
+        "host" : new StringDataType(),	
+        "user" : new StringDataType(),
+        "password" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  "responseBody" : new ObjectDataType(),
+	  "status" : new ObjectDataType()      
+    ],
+    "displayName" : "Fetch Ticket Dtls",
+	"category" :"ServiceNow Operations",
+    "icon" : "servicenow.png"
+  ],
+  [
+    "name" : "CreateZipFile",
+ "parameters" : [
+        "srcPath" : new StringDataType(),	
+        "destPath" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+       		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()      
+    ],
+    "displayName" : "Create Zip File",
+	"category" :"Zip File Operations",
+    "icon" : "zip.jpg"
+  ],
+  [
+    "name" : "CreateEncryptedZipFile",
+	"parameters" : [
+        "srcPath" : new StringDataType(),	
+        "destPath" : new StringDataType(),
+		"password" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+       		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()      
+    ],
+    "displayName" : "Create Encrypted Zip File",
+	"category" :"Zip File Operations",
+    "icon" : "zip.jpg"
+  ],
+  [
+    "name" : "ExtractEncryptedZipFile",
+	"parameters" : [
+        "srcPath" : new StringDataType(),	
+        "destPath" : new StringDataType(),
+		"password" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+       		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()      
+    ],
+    "displayName" : "Extract Encrypted Zip File",
+	"category" :"Zip File Operations",
+    "icon" : "zip.jpg"
+  ],
+  [
+    "name" : "ExtractZipFile",
+	"parameters" : [
+        "srcPath" : new StringDataType(),	
+        "destPath" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()      
+    ],
+    "displayName" : "Extract Zip File",
+	"category" :"Zip File Operations",
+    "icon" : "zip.jpg"
+  ],
+   [
+    "name" : "GetLdapUserDtls",
+	"parameters" : [
+        "ldapPassword" : new StringDataType(),	       
+		"entryName":new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType(),
+		  "attrbtsMap": new ObjectDataType()
+    ],
+    "displayName" : "Get AD User Dtls",
+	"category" :"Active Directory Operations",
+    "icon" : "activedir.jpg"
+  ],
+    [
+    "name" : "UnlockLdapUserAccount",
+	"parameters" : [
+        "ldapPassword" : new StringDataType(),	       
+		"userName":new StringDataType(),
+		"searchBase":new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()
+		  
+    ],
+    "displayName" : "Unlock AD User Acc",
+	"category" :"Active Directory Operations",
+    "icon" : "activedir.jpg"
+  ],
+   [
+    "name" : "ResetLdapUserPwd",
+	"parameters" : [
+        "ldapPassword" : new StringDataType(),	       
+		"password":	new StringDataType(),
+		"userName":new StringDataType(),
+		"searchBase":new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()
+		
+    ],
+    "displayName" : "Reset Password For AD User",
+	"category" :"Active Directory Operations",
+    "icon" : "activedir.jpg"
+  ],
+[
+    "name" : "CreateLdapUser",
+	"parameters" : [
+        "ldapPassword" : new StringDataType(),	       
+		"entryName":new StringDataType(),
+		"ldapUserAttr":new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()
+		  
+    ],
+    "displayName" : "Create AD User",
+	"category" :"Active Directory Operations",
+    "icon" : "activedir.jpg"
+  ],
+  [
+    "name" : "ModifyLdapUserAttr",
+	"parameters" : [
+        "ldapPassword" : new StringDataType(),	       
+		"ldapUserAttr":new StringDataType(),
+		"entryName":new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()
+		  
+    ],
+    "displayName" : "Modify AD User Attribute",
+	"category" :"Active Directory Operations",
+    "icon" : "activedir.jpg"
+  ],
+  [
+    "name" : "DeleteLdapUser",
+	"parameters" : [
+        "ldapPassword" : new StringDataType(),
+		"entryName":new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()
+		  
+    ],
+    "displayName" : "Delete Ldap User",
+	"category" :"Active Directory Operations",
+    "icon" : "activedir.jpg"
+  ],
+  [
+    "name" : "CallExceptionWFWithMapDtls",
+	"parameters" : [
+        "signalName" : new StringDataType(),	       
+		"sopExecId":new StringDataType(),
+		"notifyType" : new StringDataType(),	       
+		"excpDtlsMap":new ObjectDataType(),		
+		"deploymentId":new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()
+    ],
+    "displayName" : "Signal ExceptionWF With ExcpMapDtls",
+	"category" :"Exception Handling",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "CallExceptionWFWithErrorObj",
+	"parameters" : [
+        "signalName" : new StringDataType(),	       
+		"sopExecId":new StringDataType(),
+		"notifyType" : new StringDataType(),	       
+		"excpObject":new ObjectDataType(),		
+		"deploymentId":new StringDataType()
+		 ],
+    "results" : [
+	  	  "status" : new ObjectDataType()
+    ],
+    "displayName" : "Signal ExceptionWF With ErrorObj",
+	"category" :"Exception Handling",
+    "icon" : "mysql.gif"
+  ],
+   [
+    "name" : "ExternalServiceCall",
+	"parameters" : [
+        "serviceIp" : new StringDataType(),	       
+		"servicePort":new StringDataType(),
+		"serviceProtocol" : new StringDataType(),	       
+		"serviceMethod":new StringDataType(),		
+		"contentType":new StringDataType(),
+		"contextPath" : new StringDataType(),	       
+		"username":new StringDataType(),		
+		"password":new StringDataType(),
+		"httpsCertToBeSuppressed":new StringDataType(),
+		"isPwdEncrypted":new StringDataType()
+		 ],
+    "results" : [
+	  	"ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "External Rest Service Call",
+	"category" :"External Operations",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+  [
+    "name" : "SimpleRestService",
+	"parameters" : [
+        "urlString" : new StringDataType(),
+        "requestBody" : new StringDataType(),    
+		"serviceMethod":new StringDataType(),		
+		"contentType":new StringDataType(),
+		"headerKeys" : new StringDataType(),
+		"headerValues" : new StringDataType(),
+		"username":new StringDataType(),
+		"password":new StringDataType(),
+		"proxyIp":new StringDataType(),	       
+		"proxyPort":new StringDataType(),		
+		"httpsCertToBeSuppressed":new StringDataType()
+		 ],
+    "results" : [
+	  	"responseBody" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+    ],
+    "displayName" : "Syntbots RestService Call",
+	"category" :"Generic Operations",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+  [
+    "name" : "CustomServiceCall",
+	"parameters" : [
+        "serviceName" : new StringDataType()
+		 ],
+    "results" : [
+	  	"ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Custom Service Call",
+	"category" :"Custom Service Operations",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+    [
+    "name" : "UploadFileFromString",
+	"parameters" : [
+        "DYNFileNameDYN" : new StringDataType(),
+		"DYNFileTypeDYN" : new StringDataType(),
+		"DYNFileDescDYN" : new StringDataType(),
+		"DYNStrFileContentDYN" : new StringDataType(),
+		"DYNSopExecIdDYN" : new StringDataType(),
+		"DYNIsFileCntntEncdDYN" : new StringDataType(),
+		 ],
+    "results" : [
+	  	"ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Upload File As String",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "UploadFileFromByteArray",
+	"parameters" : [
+        "sendRequestBody" : new StringDataType(),
+		"serviceRequestBody" : new StringDataType()
+		],
+    "results" : [
+	  	"ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Upload File As ByteArray",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+    [
+    "name" : "DownloadFileByFileId",
+	"parameters" : [
+        "DYNFileIdDYN" : new StringDataType()
+		 ],
+    "results" : [
+	  	"ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "File Download",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "DataArchival",
+	"parameters" : [
+			"sopExecId" : new StringDataType(),
+		 ],
+    "results" : [
+	  	"ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Archive Data",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "ReadingFile",
+    "parameters" : [
+         "filePath" : new StringDataType(),
+		 "sopExecId" : new StringDataType()
+	],
+    "results" : [
+         "isFilePathExist" : new ObjectDataType(),
+	     "isFileDir" : new ObjectDataType(),
+	     "fileContentMap" : new ObjectDataType(),
+		 "status" : new ObjectDataType()
+
+    ],
+    "displayName" : "File Reading",
+    "category" : "File Operations",
+    "icon" : "folder.gif"
+  ],  
+  [
+    "name" : "WritingFile",
+    "parameters" : [
+         "filePath" : new StringDataType(),
+		 "fileContentMap" : new ObjectDataType(),		 
+		 "sopExecId" : new StringDataType()
+	],
+    "results" : [
+         "status" : new ObjectDataType()
+    ],
+    "displayName" : "File Writing",
+    "category" : "File Operations",
+    "icon" : "folder.gif"
+  ],  
+  [
+    "name" : "FileListOfSearchPattern",
+    "parameters" : [
+         "filePath" : new StringDataType(),
+		 "searchPattern" : new ObjectDataType(),		 
+		 "sopExecId" : new StringDataType()
+	],
+    "results" : [
+        "isFilePathExist" : new ObjectDataType(),
+	    "isFileDir" : new ObjectDataType(),
+	    "fileContentDtlsMap" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+    ],
+    "displayName" : "Listing Files With SearchPattern",
+    "category" : "File Operations",
+    "icon" : "folder.gif"
+  ],
+    [
+    "name" : "CountOfSearchPatternInFiles",
+    "parameters" : [
+         "filePath" : new StringDataType(),
+		 "searchPattern" : new ObjectDataType(),		 
+		 "sopExecId" : new StringDataType()
+	],
+    "results" : [
+        "isFilePathExist" : new ObjectDataType(),
+	    "isFileDir" : new ObjectDataType(),
+	    "fileContentDtlsMap" : new ObjectDataType(),
+		"status" : new ObjectDataType()
+    ],
+    "displayName" : "Count Of SearchPattern In Files",
+    "category" : "File Operations",
+    "icon" : "folder.gif"
+  ],
+  [
+    "name" : "ReadMailsWithSubjectViaMSExchange",
+	"parameters" : [
+        "emailIdentifier" : new StringDataType(),	
+        "downloadAttchmntPath" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+	"results" : [
+		"mailDataList" : new ObjectDataType(),
+        "status" : new ObjectDataType()
+    ],
+    "displayName" : "Read Specific Mails Via MSExchange",
+	"category" :"Mail Operations",
+    "icon" : "defaultemailicon.gif"
+  ],
+  [
+    "name" : "ReadAllMailsViaMSExchange",
+	"parameters" : [
+        "downloadAttchmntPath" : new StringDataType(),
+		"sopExecId" : new StringDataType()		
+           ],
+	"results" : [
+	    "mailDataList" : new ObjectDataType(),
+        "status" : new ObjectDataType()
+    ],
+    "displayName" : "Read  Mails Via MSExchange",
+	"category" :"Mail Operations",
+    "icon" : "defaultemailicon.gif"
+  ],
+  [
+    "name" : "MoveMailsViaMSExchange",
+	"parameters" : [
+        "emailIdentifier" : new StringDataType(),	
+        "downloadAttchmntPath" : new StringDataType(),
+        "moveToFolder" : new StringDataType(),
+       	"sopExecId" : new StringDataType()		
+           ],
+    "results" : [
+		"mailDataList" : new ObjectDataType(),
+        "status" : new ObjectDataType()
+    ],
+    "displayName" : "Relocate Mails Via MSExchange",
+	"category" :"Mail Operations",
+    "icon" : "defaultemailicon.gif"
+  ],
+  [
+    "name" : "ScheduleAJob",
+	"parameters" : [
+		"serviceRequestBody" : new StringDataType(),		
+		"sendRequestBody" :  new StringDataType(),
+		"sopExecId" : new StringDataType()
+		 ],
+    "results" : [
+	  	"ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Job Schedule",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "Activity",
+	"parameters" : [
+		"actvtyIntrvl" : new StringDataType()
+		 ],
+    "results" : [
+	  	"queryStatus" : new ObjectDataType()
+    ],
+    "displayName" : "VariableInstanceLog Activity",
+	"category" :"EnvMgmt Operations",
+    "icon" : "mysql.gif"
+  ],
+ [
+    "name" : "ReDoInitOps",
+	"results" : [
+	  	"status" : new ObjectDataType()
+    ],
+    "displayName" : "Reload Application Params",
+	"category" :"EnvMgmt Operations",
+    "icon" : "mysql.gif"
+  ],
+  [
+    "name" : "GetSOPNameByRE",
+    "parameters" : [
+        "serviceRequestBody" : new StringDataType(),		
+		"sendRequestBody" :  new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Get SOP Name By Rule Engine",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+	],
+	[
+    "name" : "ExecuteSOPBySOPName",
+    "parameters" : [
+        "serviceRequestBody" : new StringDataType(),		
+		"sendRequestBody" :  new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Execute SOP",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+	],
+	 [
+    "name" : "GetIMSDtls",
+    "parameters" : [
+        "serviceRequestBody" : new StringDataType(),		
+		"sendRequestBody" :  new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Get IMS Details",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+	],
+	[
+    "name" : "UpdateRqustInfoFrmWrkFlw",
+    "parameters" : [        	
+		"DYNsopExecIdDYN" :  new StringDataType(),
+		"DYNrequestIdDYN" : new StringDataType()
+           ],
+    "results" : [
+        "ResponseCode" : new ObjectDataType(),
+		"ResponseBody" : new ObjectDataType(),
+	    "ResponseMessage" : new ObjectDataType()
+    ],
+    "displayName" : "Update Request Info From Workflow",
+	"category" :"SOP Operations",
+    "icon" : "mysql.gif"
+	],
+	[
+    "name" : "CreateCSVFile",
+    "parameters" : [        	
+		"csvFileName" :  new StringDataType(),
+		"csvFileInptDtLst" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+        "status" : new ObjectDataType()		
+    ],
+    "displayName" : "Create CSV File",
+	"category" :"SOP Operations",
+    "icon" : "csv.gif"
+	],
+	[
+    "name" : "ReadCSVFile",
+    "parameters" : [        	
+		"csvFilepath" :  new StringDataType(),
+		"csvColumnName" : new StringDataType(),
+		"sopExecId" : new StringDataType()
+           ],
+    "results" : [
+		"csvFileData" : new ObjectDataType(),		
+        "status" : new ObjectDataType()		
+    ],
+    "displayName" : "Read CSV File",
+	"category" :"SOP Operations",
+    "icon" : "csv.gif"
+	],	
+   [
+    "name" : "ExtractJSONKeys",
+    "parameters" : [
+           "jsonData" : new StringDataType()
+		],
+    "results" : [
+        "status" : new ObjectDataType()
+    ],
+    "displayName" : "Get Json Key Values",
+	"category" :"Json Operations",
+    "icon" : "json.png"
+	],
+	[
+    "name" : "CreateJSON",
+    "parameters" : [
+	 "Key_Name_PlaceHolder" : new StringDataType()
+		],
+    "results" : [
+        "createdJson" : new ObjectDataType()
+    ],
+    "displayName" : "Create Json",
+	"category" :"Json Operations",
+    "icon" : "json.png"
+	],
+	[
+    "name" : "UpdateJSON",
+    "parameters" : [
+           "jsonData" : new StringDataType()
+		],
+    "results" : [
+        "updatedJson" : new ObjectDataType()
+    ],
+    "displayName" : "Update Json",
+	"category" :"Json Operations",
+    "icon" : "json1.png"
+	],	
+	[
+    "name" : "RegexPatternMatch",
+    "parameters" : [
+           "regexPattern" : new StringDataType(),
+		   "textData" : new StringDataType()
+		],
+    "results" : [
+        "patternMatched" : new ObjectDataType()
+    ],
+    "displayName" : "Pattern Search",
+	"category" :"String Operations",
+    "icon" : "stringops.gif"
+	],
+    [
+    "name" : "RegexPatternReplace",
+    "parameters" : [
+           "regexPattern" : new StringDataType(),
+		   "textData" : new StringDataType(),
+		   "textReplacer" : new StringDataType()
+		],
+    "results" : [
+        "replacedTextData" : new ObjectDataType()
+    ],
+    "displayName" : "pattern Replace",
+	"category" :"String Operations",
+    "icon" : "stringops.gif"
+   ],
+   [
+    "name" : "CompareDates",
+    "parameters" : [
+           "inputDateOne" : new StringDataType(),
+		   "inputDateTwo" : new StringDataType(),
+		   "dateFormat" : new StringDataType()
+		],
+    "results" : [
+        "maxDate" : new ObjectDataType()
+    ],
+    "displayName" : "Compare Dates",
+	"category" :"Date Operations",
+    "icon" : "defaultservicenodeicon.png"
+   ],  [
+    "name" : "CreateBotInputRequestHandler",
+	"parameters" : [
+		"sopexecutionId" :  new StringDataType(),
+		"appcode" :  new StringDataType(),
+		"botprocess" : new StringDataType(),
+		"botAdapterOper" : new StringDataType(),
+		"userid" : new StringDataType(),		
+		"botHeaderTimeOut" : new StringDataType(),
+		"sessionReuse" : new StringDataType(),
+		"skipCredentialCheck" : new StringDataType(),
+		"nodeCredCheck" : new StringDataType(),
+		"browserType" : new StringDataType(),
+		"botInputTimeOut" : new StringDataType(),
+		"botInputDataMap" : new ObjectDataType()
+		 ],
+    "results" : [
+	  	"botRequestInputJson" : new ObjectDataType()
+    ],
+    "displayName" : "Bot Input Request",
+	"category" :"BotManager",
+    "icon" : "Bot.jpg"
+  ],
+   [
+    "name" : "BaseSixtyFourDecoder",
+    "parameters" : [
+		   "encodedInput" : new StringDataType()
+		],
+    "results" : [
+        "decodedOutput" : new ObjectDataType()
+    ],
+    "displayName" : "Decode String",
+	"category" :"String Operations",
+    "icon" : "stringops.png"
+   ],
+  [
+    "name" : "BotOutputResponseHandler",
+	"parameters" : [
+				
+		"botResult" :  new StringDataType(),
+		"botOutputDataList" : new ObjectDataType()
+		 ],
+    "results" : [
+	  	"botRequestInputJson" : new ObjectDataType()
+    ],
+    "displayName" : "Bot Response",
+	"category" :"BotManager",
+    "icon" : "Bot.jpg"
+  ]
 ]
